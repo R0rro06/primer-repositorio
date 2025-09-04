@@ -9,14 +9,13 @@ def listar_contactos():
     print("\nlista de contactos : ")
     for c in contacto:
         print(f"{c['nombre']} - [{c['telefono']}]")
-        
-def buscar_contacto():
+
+def buscar_contacto(nombre):
     for c in contacto:
-        if c ['nombre'].lower() == nombre.lower():
+        if c['nombre'].lower() == nombre.lower():
             print(f"contacto encontrado {c['nombre']} - {c['telefono']}")
             return
-        print("contacto no encontrado")
-
+    print("contacto no encontrado")
 
 listar_contactos()
 
@@ -35,9 +34,11 @@ while opciones != 4:
     print("2-Listar contacto")
     print("3-buscar contacto")
     print("4-Salir del programa")
+
     opciones = int(input("Escoja una de las opciones : "))
+
     if opciones == 1:
-        nombre = input("Ingrese el nombre")
+        nombre = input("Ingrese el nombre:")
         telefono = input("Ingrese el numero de telefono : ")
         agregar_contacto(nombre,telefono)
 
@@ -49,10 +50,10 @@ while opciones != 4:
         buscar_contacto(nombre_buscar)
 
     elif opciones == 4:
-    
         print("Hasta luego")
-
+        break
     else:
         print("Ingrese una opcion valida")
+
 
 
